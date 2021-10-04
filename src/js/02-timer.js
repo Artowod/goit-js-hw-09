@@ -23,7 +23,7 @@ const options = {
   time_24hr: false, //Displays time picker in 24 hour mode without AM/PM selection when enabled.
   defaultDate: new Date(),
   minuteIncrement: 1, //Adjusts the step for the minute input (incl. scrolling)
-    onClose(selectedDates) {
+  onClose(selectedDates) {
     if (selectedDates[0] < Date.now()) {
       startBtn.disabled = true;
       window.alert('Please choose a date in the future');
