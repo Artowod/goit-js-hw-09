@@ -17,19 +17,21 @@ delay со значениями одноименных параметров. И�
 import Notiflix from 'notiflix';
 import 'notiflix/dist/notiflix-3.1.0.min.css';
 
-const createPromise = (position,delay) => new Promise((res, rej) => {
-  setTimeout(() => {
-    const shouldResolve = Math.random() > 0.3;
-    if (shouldResolve) {
-      res({position, delay});
-    } else {
-      rej({position, delay});
-    }
-  },delay);
-});
+const createPromise = (position, delay) =>
+  new Promise((res, rej) => {
+    setTimeout(() => {
+      const shouldResolve = Math.random() > 0.3;
+      if (shouldResolve) {
+        res({ position, delay });
+      } else {
+        rej({ position, delay });
+      }
+    }, delay);
+  });
 /* 
 Notiflix.Report.success('Fulfilled promise', '', 'Close');
 Notiflix.Report.warning('Rejected promise', '', 'Close'); 
+Notiflix.Report.failure('Rejected promise', '', 'Close'); 
 */
 
 const handleSubmitBtn = document.querySelector('.form').addEventListener('submit', event => {
@@ -38,7 +40,7 @@ const handleSubmitBtn = document.querySelector('.form').addEventListener('submit
   const step = +event.currentTarget.elements['step'].value;
   const delay = +event.currentTarget.elements['delay'].value;
   for (let position = 0; position < amount; position++) {
-    createPromise(position+1, delay + step*position)
+    createPromise(position + 1, delay + step * position)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
       })
@@ -46,18 +48,7 @@ const handleSubmitBtn = document.querySelector('.form').addEventListener('submit
         Notiflix.Notify.failure(`Rejected promise ${position} in ${delay}ms`);
       });
   }
-
 });
-
-
-
-
-
-
-
-
-
-
 
 //================================================================================
 //====================================Example=====================================
