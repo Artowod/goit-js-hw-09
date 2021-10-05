@@ -15,7 +15,7 @@ delay со значениями одноименных параметров. И�
 для выбора того, что нужно сделать с промисом - выполнить или отклонить.
  */
 import Notiflix from 'notiflix';
-import 'notiflix/dist/notiflix-3.1.0.min.css';
+/* import 'notiflix/dist/notiflix-3.1.0.min.css'; */
 
 const createPromise = (position, delay) =>
   new Promise((res, rej) => {
