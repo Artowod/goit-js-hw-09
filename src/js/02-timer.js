@@ -11,7 +11,7 @@ import flatpickr from 'flatpickr';
 import Notiflix from 'notiflix';
 // Дополнительный импорт стилей
 import 'flatpickr/dist/flatpickr.min.css';
-import 'notiflix/dist/notiflix-3.1.0.min.css';
+/* import 'notiflix/dist/notiflix-3.1.0.min.css'; */
 
 const startBtn = document.querySelector('[data-start]');
 const stopBtn = document.querySelector('[data-stop]');
