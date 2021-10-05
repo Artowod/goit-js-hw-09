@@ -28,7 +28,8 @@ const createPromise = (position, delay) =>
       }
     }, delay);
   });
-/* 
+
+/*
 Notiflix.Report.success('Fulfilled promise', '', 'Close');
 Notiflix.Report.warning('Rejected promise', '', 'Close'); 
 Notiflix.Report.failure('Rejected promise', '', 'Close'); 
