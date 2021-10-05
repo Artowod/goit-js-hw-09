@@ -8,8 +8,10 @@
 
 // Описан в документации
 import flatpickr from 'flatpickr';
+import Notiflix from 'notiflix';
 // Дополнительный импорт стилей
 import 'flatpickr/dist/flatpickr.min.css';
+import 'notiflix/dist/notiflix-3.1.0.min.css';
 
 const startBtn = document.querySelector('[data-start]');
 const stopBtn = document.querySelector('[data-stop]');
@@ -26,10 +28,10 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] < Date.now()) {
       startBtn.disabled = true;
-      window.alert('Please choose a date in the future');
+      Notiflix.Report.warning('Please choose a date in the future', '', 'Close');
     } else {
       startBtn.disabled = false;
-      console.log('Target time: ', selectedDates[0]);
+      /*       console.log('Target time: ', selectedDates[0]); */
       selectedDate = selectedDates[0];
     }
   },
